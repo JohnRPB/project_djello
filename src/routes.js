@@ -1,7 +1,6 @@
 import React from 'react';
 import App from './containers/AppContainer';
-import Login from './components/Login';
-import PrivateRouteContainer from './containers/PrivateRouteContainer';
+import About from './components/About/About';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -9,8 +8,8 @@ const Routes = () => {
   return (
     <Router>
       <div>
-        <PrivateRouteContainer path="/" component={App} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/" component={App} />
+        <Route exact path="/about" component={About} />
       </div>
     </Router>
   )

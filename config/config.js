@@ -3,6 +3,8 @@ var path = require("path");
 require("dotenv").config({
   path: path.join(__dirname, "/.env")
 });
+console.log("process.env.USER_NAME: ", process.env.USER_NAME);
+
 
 module.exports = {
   "development": {

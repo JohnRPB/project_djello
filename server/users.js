@@ -6,12 +6,18 @@ let User = models.User;
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
+  console.log("-------------------------------- HEY -------------------------------");
+  console.log("User: ", User);
+  
   User.findAll({
   })
     .then(users => {
       res.status(200).send(users);
     })
-    .catch(e => res.status(500).send(e.stack));
+    .catch(e => {
+      console.log(e);
+      res.status(500).send(e.stack)
+    });
 });
 
 module.exports = router;

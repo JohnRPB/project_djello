@@ -1,3 +1,5 @@
+// REDUCERS 
+
 import { EXPRESS_TEST_RESULTS, DB_TEST_RESULTS, EXPRESS_TEST_ERROR, DB_TEST_ERROR } from '../actions';
 
 const initialState = {
