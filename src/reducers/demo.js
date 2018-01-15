@@ -1,24 +1,39 @@
 // REDUCERS 
 
-import { EXPRESS_TEST_RESULTS, DB_TEST_RESULTS, EXPRESS_TEST_ERROR, DB_TEST_ERROR } from '../actions';
+import {combineReducers} from 'redux';
 
-const initialState = {
-    results: ''
+import { EXPRESS_TEST_RESULTS, DB_TEST_RESULTS, EXPRESS_TEST_ERROR, DB_TEST_ERROR, GET_BOARDS_RESULTS, GET_BOARDS_ERROR } from '../actions';
+
+let initialState = {
+  demo: {
+    testResults: ""
+  },
+  boards: [],
+
 }
 
-const demo = (state = initialState, action) => {
+export const demo = (state = initialState.demo, action) => {
     switch (action.type) {
         case EXPRESS_TEST_RESULTS:
-            return { ...state, results: "Test Succeeded!  " + action.data }
+            return { testResults: "Test Succeeded!  " + action.data }
         case DB_TEST_RESULTS:
-            return { ...state, results: "Test Succeeded!  " + action.data }
+            return { testResults: "Test Succeeded!  " + action.data }
         case EXPRESS_TEST_ERROR:
-            return { ...state, results: "Test Failed!  " + action.data }
+            return { testResults: "Test Failed!  " + action.data }
         case DB_TEST_ERROR:
-            return { ...state, results: "Test Failed!  " + action.data }
+            return { testResults: "Test Failed!  " + action.data }
         default:
             return state
     }
 }
 
-export default demo;
+export const boards = (state = initialState.boards , action) => {
+  switch(action.type) {
+    case GET_BOARDS_RESULTS:
+      return [...action.data]; 
+    default:
+      return state
+  }
+}
+
+

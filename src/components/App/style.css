@@ -22,3 +22,15 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.main-select {
+  float:right;
+  transform: translate(-30%, 70%);
+}
+
+.main-select select {
+  border: 1px solid black;
+  border-radius:5px;
+  width:200px;
+}
+
